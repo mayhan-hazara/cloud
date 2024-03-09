@@ -23,13 +23,13 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64
           push: true
-          tags: your-dockerhub-username/your-portfolio-app:latest
+          tags: mayhan-hazara/your-portfolio-app:latest
 
       - name: Login to AWS ECR
         uses: aws-actions/amazon-ecr-login@v2
         with:
-          registry: <your-aws-account-id>.dkr.ecr.<your-region>.amazonaws.com
-          region: <your-region>
+          registry: <i201804@nu.edu.pk>.dkr.ecr.<us-east-1>.amazonaws.com
+          region: <us-east-1>
 
       - name: Build and push Docker image to AWS ECR
         uses: docker/build-push-action@v2
@@ -38,4 +38,4 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64
           push: true
-          tags: <your-aws-account-id>.dkr.ecr.<your-region>.amazonaws.com/your-portfolio-app:latest
+          tags: <i201804@nu.edu.pk>.dkr.ecr.<us-east-1>.amazonaws.com/your-portfolio-app:latest
